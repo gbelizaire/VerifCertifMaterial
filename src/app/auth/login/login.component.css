@@ -1,0 +1,71 @@
+mat-form-field input{
+    /* text-align: center; */
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2em;
+}
+.mat-card{
+    
+}
+/* form{
+    width: 400px;
+}
+  mat-form-field{
+    width: 80%;
+    display: block;
+    margin: auto;
+}  */
+.mat-card{
+    /* background-color: darkorchid */
+    margin-top:40px auto;
+    width: 300px;
+    height: 460px;
+    border: 1px solid lightgreen;
+    border-radius: 8px;
+    align-self: center;
+    flex: 1 1 600px;
+    min-width: 300px;
+    max-width: 600px;
+}
+.espaceImg{
+    width: 100px;
+    height: 100px;
+    display: block;
+    background-image: url('./../../../assets/images/haiti.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    
+    border:1px solid lightgreen;
+    margin-bottom: 20px;
+   
+    color:white;
+    font-size: 20px;
+    font-weight: bolder;
+    border-radius: 100%;
+}
+.entete{
+    width: 100%;
+     font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 40px;
+    color: rgb(1, 56, 1);
+    font-size: 16px;
+    font-weight: bolder;
+}
+.entete1{
+    width: 100%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    /* margin-bottom: 10px; */
+    color: rgb(1, 56, 1);
+    font-size: 18px;
+    font-weight: bolder;
+    margin-bottom: 50px;
+}
+button{
+    /* width: 100px; */
+    margin-top: 40px;
+}
+.tlogin{
+    height: 100%;
+    width: 100%;
+}

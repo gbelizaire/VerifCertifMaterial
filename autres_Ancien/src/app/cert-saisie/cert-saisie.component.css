@@ -1,0 +1,123 @@
+.container{
+    width: 900px;
+    /* height: 70px; */
+    display: flex;
+     /* border: 1px solid black;  */
+    margin: 10px auto;
+}
+.tableInfo{
+    /* width:70%; */
+    height: auto;
+    margin-top:12px;
+    /* border: 1px solid darkblue; */
+    /* height: 50%;; */
+    /* margin:10px auto; */
+}
+.candidats{
+    border: 1px solid darkblue;
+    margin-left: 2px;
+}
+.matricule{
+    border:1px solid rgb(186, 186, 245);
+}
+.titre{
+    font-weight: bold;
+    font-size: small;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    /* padding: 1px; */
+    margin: 0px;
+}
+.donnees{
+    font-size: small;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    padding: 0;
+    margin-top: 0;
+     margin-bottom: 7px; 
+}
+.bun{
+    font-size: 12px;
+    width: 100%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    /* padding: 0; */
+    margin-top: 10px;
+    margin: auto;
+    text-align: center;
+    /* margin-bottom: 2px; */
+}
+.bun_sigle{
+  font-weight: bold;
+  font-size: small;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  /* margin: 0px;
+  padding: 0px; */
+  text-align: center
+    
+}
+.ligne{
+    display: block;
+    /* height: 1px; */
+    margin-top: 0px;
+    padding: 0px;
+    margin-bottom: 10px;
+}
+.imprimer{
+    width: 100%;
+}
+
+.imprimer button{
+    float:right;
+}
+.sai_matricule{
+  font-weight: bold;
+  font-size: 30px;
+  /* letter-spacing: 0.5cm; */
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.lescandidats{
+    width: 850px;
+    height: auto;
+    margin: auto;
+    /* overflow: scroll; */
+
+}
+.candidat{
+    width: 300px;
+    height: 220px;
+    display: block;
+    float: left;
+    /* margin: 13px; */
+    padding: 6px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #a75b5b;
+}
+.gras{
+    font-weight: bold;
+    display: inline-block;
+    /* width:30%; */
+    display: inline block;
+}
+.l{
+    font-size: 10px;
+    width: 100%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    padding-left: 20px;
+    margin-top: 0;
+    /* margin: auto */
+      
+  }
+
+  .bb{
+      margin-top:20px;
+      margin-left: 6px;
+      border: 2px solid black;
+  }
+  .info{
+      margin: 0px;
+      padding: 0px;
+  }

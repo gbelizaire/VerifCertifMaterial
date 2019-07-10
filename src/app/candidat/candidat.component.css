@@ -1,0 +1,26 @@
+/* table{
+    border:1px solid black;
+} */
+th mat-header-cell{
+    font-weight: bold;
+    font-size: 20px;
+}
+.f{margin-bottom: 20px;}
+
+.rowmouseon:hover{
+    /* background-color: rgb(203, 247, 197); */
+    background-color:lightskyblue;
+     /* rgba(178, 203, 231, 0.87); */
+    cursor: pointer;
+}
+
+.affichedonnee{
+    width: 100%;
+    /* border:1px solid black; */
+    /* margin-right: 4px; */
+}
+.info{
+    width: 20%;
+    background-color: lightskyblue;
+    border:1px solid black;
+}

@@ -1,0 +1,93 @@
+
+<div  class="container" fxLayout="column" fxLayoutAlign="center center" fxFlexAlign="center">
+  <mat-card class="matricule" fxFlex="80px" fxLayoutAlign="center center" fxFlexAlign="center">
+      <mat-card-content fxFlexFill> 
+        <mat-form-field fxFlex="300px" >
+          <input matInput 
+                  #Matricule 
+                  name="Matricule" 
+                  placeholder="Maticule ici"
+                  minlength="3" 
+                  maxlength="10" 
+                  (focus)="$event.target.value='';candidatchoisi=null; contientErreur= false;infoTrouvee=false;false;" 
+                  (keydown.enter) = "Matricule.blur();doSomething(Matricule)" 
+                  class="sai_matricule"
+                  >
+        </mat-form-field>
+        <button mat-icon-button (click)="Matricule.blur();doSomething(Matricule)">
+          <mat-icon>search</mat-icon>
+        </button>
+      </mat-card-content>
+  </mat-card>
+
+<div class="tableInfo" fxLayout="row" *ngIf="infoTrouvee">
+  <mat-card fxFlex="1 0 400px"class="candidats">
+    <mat-card-content fxFlexFill *ngIf="infoTrouvee">
+       <app-candidat [personnes]="personnes" (candidatselectionne)="AfficheCandidatSelectionne($event)"></app-candidat>           
+     </mat-card-content>
+
+  </mat-card>
+   <mat-card fxFlex="340px" class="info"  *ngIf="candidatchoisi">
+    <div class="bb" id="info2">
+    <div class="candidat" >
+      <p class="bun_sigle">B U N E X E</p> 
+      <p class="bun">Bureau National des Examens d'Etat</p>
+      <p class="ligne">------------------------------------------------------------------</p>
+     
+      <p class="l"><span class="gras">MATRICULE :</span>  {{candidatchoisi.Matricule}}</p> 
+       <p class="l"><span class="gras">NOM :</span>  {{candidatchoisi.nom}}</p> 
+     
+      <p class="l"><span class="gras">PRENOM :</span>  {{candidatchoisi.prenom}}</p>
+      
+      <p class="l"><span class="gras">SEXE :</span>  {{candidatchoisi.sexe=="1"? "Masculin":"Feminin"}} ;   <span class="gras">DATE DE NAISSANCE :</span>  {{candidatchoisi.dateNaiss}}</p>
+       
+     
+      <p class="l"><span class="gras">ANNEE SCOLAIRE :</span>  {{candidatchoisi.Annee}} ;   <span class="gras">SESSION :</span>  {{candidatchoisi.Session}} </p>
+           
+      <p class="l"><span class="gras">SECTION :</span>  {{candidatchoisi.Section}}  ;    <span class="gras">NOTE TOTALE :</span>  {{candidatchoisi.NotesExtraOrdinaire>0? candidatchoisi.NotesExtraOrdinaire:candidatchoisi.NotesOrdinaire }}</p>
+              
+      <p class="l"><span class="gras">MENTION :</span>  {{' Admise ou Echec'}}</p>
+      
+    </div>
+  </div>
+    <!-- {{candidatchoisi | json }}   -->
+    <!-- <p class="bun_sigle">B U N E X E</p> 
+      <p class="bun">Bureau National des Examens d'Etat</p>
+      <p class="ligne">--------------------------------------------</p>
+    <p class="titre">MATRICULE</p> 
+    <p class="donnees">{{candidatchoisi.Matricule}}</p>
+    <p class="titre">NOM</p> 
+    <p class="donnees">{{candidatchoisi.nom}}</p>
+    <p class="titre">PRENOM</p>
+    <p class="donnees">{{candidatchoisi.prenom}}</p>
+    <p class="titre">SEXE</p>
+    <p class="donnees">{{candidatchoisi.sexe=="1"? "Masculin":"Feminin"}}</p>
+    <p class="titre">DATE DE NAISSANCE</p>
+    <p class="donnees">{{candidatchoisi.dateNaiss}}</p>
+    <p class="titre">ANNEE SCOLAIRE</p>
+    <p class="donnees">{{candidatchoisi.Annee}}</p>
+    <p class="titre">SESSION</p>
+    <p class="donnees">{{candidatchoisi.Session}}</p>
+    <p class="titre">SECTION</p>
+    <p class="donnees">{{candidatchoisi.Section}}</p>
+    <p class="titre">NOTE TOTALE</p>
+    <p class="donnees">{{candidatchoisi.NotesExtraOrdinaire>0? candidatchoisi.NotesExtraOrdinaire:candidatchoisi.NotesOrdinaire }}</p>
+    <p class="titre">MENTION</p>
+    <p class="donnees"> Admise ou Echec</p> -->
+     <!-- <span>{{candidatchoisi.Matricule}}</span> -->
+     <!-- <div class="lescandidats" id="info">
+     
+     
+    </div> -->
+    <div class="imprimer" (click)="Imprimer()">
+      <button mat-icon-button >
+      <mat-icon>printer</mat-icon>
+    </button>
+    </div>
+     
+   </mat-card>
+   
+</div>
+
+</div>
+ 

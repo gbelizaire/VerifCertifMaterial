@@ -1,0 +1,30 @@
+<div class="imprimer" (click)="Imprimer()">
+  <button mat-icon-button >
+  <mat-icon>printer</mat-icon>
+</button>
+</div>
+
+<div class="lescandidats" id="info">
+  <div class="candidat"  *ngFor="let d of lesDocs">
+    <p class="bun_sigle">B U N E X E</p> 
+    <p class="bun">Bureau National des Examens d'Etat</p>
+    <p class="ligne">-----------------------------------------------------------------------</p>
+   
+    <p class="l"><span class="gras">MATRICULE :</span>  {{d.Matricule}}</p> 
+     <p class="l"><span class="gras">NOM :</span>  {{d.nom}}</p> 
+   
+    <p class="l"><span class="gras">PRENOM :</span>  {{d.prenom}}</p>
+    
+    <p class="l"><span class="gras">SEXE :</span>  {{d.sexe=="1"? "Masculin":"Feminin"}} ;   <span class="gras">DATE DE NAISSANCE :</span>  {{d.dateNaiss}}</p>
+     
+   
+    <p class="l"><span class="gras">ANNEE SCOLAIRE :</span>  {{d.Annee}} ;   <span class="gras">SESSION :</span>  {{d.Session}} </p>
+         
+    <p class="l"><span class="gras">SECTION :</span>  {{d.Section}}  ;    <span class="gras">NOTE TOTALE :</span>  {{d.NotesExtraOrdinaire>0? d.NotesExtraOrdinaire:d.NotesOrdinaire }}</p>
+            
+    <p class="l"><span class="gras">MENTION :</span>  {{' Admise ou Echec'}}</p>
+    
+  </div>
+ 
+</div>
+

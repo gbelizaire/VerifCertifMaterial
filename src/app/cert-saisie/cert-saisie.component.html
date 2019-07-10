@@ -1,0 +1,71 @@
+
+<div  class="container" fxLayout="column" fxLayoutAlign="center center" fxFlexAlign="center">
+ <div fxLayout="row">
+  <mat-card class="matricule" fxFlex="450px" fxLayoutAlign="center center" fxFlexAlign="center">
+      <mat-card-content fxFlexFill> 
+        <mat-form-field fxFlex="340px" >
+          <input matInput 
+                  #Matricule 
+                  name="Matricule" 
+                  placeholder="Maticule ici"
+                  minlength="3" 
+                  maxlength="10" 
+                  autofocus="autofocus"
+                  (focus)="$event.target.value='';candidatchoisi=null; contientErreur= false;infoTrouvee=false;false;" 
+                  (keydown.enter) = "Matricule.blur();doSomething(Matricule)" 
+                  class="sai_matricule"
+                  >
+        </mat-form-field>
+        <button mat-icon-button (click)="Matricule.blur();doSomething(Matricule)">
+          <mat-icon>search</mat-icon>
+        </button>
+       
+      </mat-card-content>
+  </mat-card>
+  <button mat-icon-button fxFlex="30px" (click)="deconnecter()"> 
+      <mat-icon>lock</mat-icon>
+  </button>
+ </div>
+<div class="tableInfo" fxLayout="row" *ngIf="infoTrouvee">
+  <mat-card fxFlex="1 0 600px"class="candidats">
+    <mat-card-content fxFlexFill *ngIf="infoTrouvee">
+       <app-candidat [personnes]="personnes" (candidatselectionne)="AfficheCandidatSelectionne($event)"></app-candidat>           
+     </mat-card-content>
+
+  </mat-card>
+   <mat-card fxFlex="240px" class="info" id="info" *ngIf="candidatchoisi">
+      <p class="bun_sigle">B U N E X E</p> 
+      <p class="bun">Bureau National des Examens d'Etat</p>
+      <p class="ligne">--------------------------------------------</p>
+    <p class="titre">MATRICULE</p> 
+    <p class="donnees">{{candidatchoisi.Matricule}}</p>
+    <p class="titre">NOM</p> 
+    <p class="donnees">{{candidatchoisi.nom}}</p>
+    <p class="titre">PRENOM</p>
+    <p class="donnees">{{candidatchoisi.prenom}}</p>
+    <p class="titre">SEXE</p>
+    <p class="donnees">{{candidatchoisi.sexe=="1"? "Masculin":"Feminin"}}</p>
+    <p class="titre">DATE DE NAISSANCE</p>
+    <p class="donnees">{{candidatchoisi.dateNaiss}}</p>
+    <p class="titre">ANNEE SCOLAIRE</p>
+    <p class="donnees">{{candidatchoisi.Annee}}</p>
+    <p class="titre">SESSION</p>
+    <p class="donnees">{{candidatchoisi.Session}}</p>
+    <p class="titre">SECTION</p>
+    <p class="donnees">{{candidatchoisi.Section}}</p>
+    <p class="titre">NOTE TOTALE</p>
+    <p class="donnees">{{ candidatchoisi.TotNotes ? candidatchoisi.TotNotes:" 0 " }} / {{candidatchoisi.TotCoef ? candidatchoisi.TotCoef:""}}</p>
+    <p class="titre">MENTION</p>
+    <p class="donnees"> {{ candidatchoisi.Mention ? candidatchoisi.Mention:"" }}</p>
+     <!-- <span>{{candidatchoisi.Matricule}}</span> -->
+     <div class="imprimer" (click)="Imprimer()">
+       <button mat-icon-button >
+       <mat-icon>printer</mat-icon>
+     </button>
+     </div>
+     <p class="dat_"> Imprimé le : {{ dd }}</p>
+   </mat-card>
+</div>
+
+</div>
+ 

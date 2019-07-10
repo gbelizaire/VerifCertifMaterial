@@ -1,0 +1,31 @@
+
+<div  class="container" fxLayoutAlign="center center" fxFlexAlign="center">
+  <mat-card class="matricule" fxFlex="300px" fxLayoutAlign="center center" fxFlexAlign="center">
+      <mat-card-content fxFlexFill> 
+        <mat-form-field fxFlex="240px" >
+          <input matInput 
+                  #Matricule 
+                  name="Matricule" 
+                  placeholder="Maticule ici"
+                  minlength="3" 
+                  maxlength="10" 
+                  (focus)="$event.target.value=''; contientErreur= false;infoTrouvee=false;false;" 
+                  (keydown.enter) = "Matricule.blur();doSomething(Matricule)" 
+                  >
+        </mat-form-field>
+        <button mat-icon-button (click)="Matricule.blur();doSomething(Matricule)">
+          <mat-icon>search</mat-icon>
+        </button>
+      </mat-card-content>
+  </mat-card>
+</div>
+<div class="tableInfo" fxLayout="row">
+  <mat-card fxFlex="1 0 600px"class="candidats">
+    <mat-card-content fxFlexFill *ngIf="infoTrouvee">
+       <app-candidat [personnes]="personnes"></app-candidat>           
+     </mat-card-content>
+
+  </mat-card>
+  <!-- <mat-card fxFlex="240px" class="info"></mat-card> -->
+</div>
+ 
